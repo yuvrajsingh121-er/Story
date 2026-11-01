@@ -163,3 +163,45 @@ function toggleMusic() {
         musicBtn.classList.remove('playing');
     }
 }
+
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart-particle');
+    heart.innerText = ['❤️', '💖', '✨', '🌸'][Math.floor(Math.random() * 4)];
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 4000);
+}
+setInterval(createHeart, 800);
+
+// Love Letters Pool for Envelope
+const loveLetters = [
+    "Tumhe pata hai? Jab bhi mera phone bajta hai, mujhe umeed hoti hai ki wo tumhara message ho. You are my absolute favorite person! 💖",
+    "Dur hokar bhi tum mere sabse paas ho. Har ek pal jo tumhare sath bitaya hai, wo meri life ka bestest part hai. ✨",
+    "Bas yehi kehna tha ki thank you meri life me aane ke liye aur ise itna khoobsurat banane ke liye. Love you endlessly! 💕",
+    "Meri duniya ki sabse pyari smile ke liye: Hamesha haste raho, kyunki tumhari smile hi meri khushi hai! 🌸"
+];
+
+function openEnvelope() {
+    const randomLetter = loveLetters[Math.floor(Math.random() * loveLetters.length)];
+    document.getElementById('letter-text').innerText = `"${randomLetter}"`;
+    document.getElementById('letter-content').classList.remove('hidden');
+    document.getElementById('envelope-icon').style.transform = 'scale(1.2) rotate(-10deg)';
+}
+
+function closeEnvelope() {
+    document.getElementById('letter-content').classList.add('hidden');
+    document.getElementById('envelope-icon').style.transform = 'scale(1) rotate(0deg)';
+}
+
+function selectMood(mood) {
+    const responseBox = document.getElementById('mood-response');
+    if (mood.includes('Happy')) {
+        responseBox.innerText = "Aapki yeh smile hamesha aise hi bani rahe! Bhagwan se yahi dua hai. 🥰✨";
+    } else if (mood.includes('Missing')) {
+        responseBox.innerText = "Main bhi aapko bahut miss kar raha hoon! Jaldi milte hain na. 🥺❤️";
+    } else {
+        responseBox.innerText = "Yay! Aapki khushi me hi meri khushi hai! 🎉💖";
+    }
+}

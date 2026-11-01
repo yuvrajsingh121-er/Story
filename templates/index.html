@@ -37,6 +37,31 @@
         </div>
         <hr style="border-color: var(--glass-border); margin: 25px 0;">
 
+        <!-- Surprise Envelope & Mood Section -->
+<div class="glass-card">
+    <h3>💌 Daily Love Envelope</h3>
+    <div id="envelope-container" onclick="openEnvelope()" style="cursor: pointer; margin: 15px 0;">
+        <div id="envelope-icon" style="font-size: 3.5rem; transition: transform 0.3s;">✉️</div>
+        <p id="envelope-text" style="font-weight: bold; margin-top: 5px;">Tap to Open Today's Letter ❤️</p>
+    </div>
+    
+    <!-- Hidden Letter Content Modal/Box -->
+    <div id="letter-content" class="hidden" style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 12px; margin-top: 10px; border: 1px dashed var(--glass-border);">
+        <p id="letter-text" style="font-style: italic; font-size: 1.1rem; line-height: 1.5;"></p>
+        <button onclick="closeEnvelope()" style="background: #ff4d4d; color: white; padding: 5px 12px; font-size: 0.8rem; margin-top: 10px;">Close Letter ✖️</button>
+    </div>
+</div>
+
+<div class="glass-card">
+    <h3>🥰 How are you feeling today?</h3>
+    <div style="display: flex; justify-content: space-around; margin-top: 15px; flex-wrap: wrap; gap: 10px;">
+        <button onclick="selectMood('Happy 🥰')" style="background: rgba(255,255,255,0.2); color:#fff; border: 1px solid var(--glass-border); padding: 8px 15px;">Happy 🥰</button>
+        <button onclick="selectMood('Missing You 🥺')" style="background: rgba(255,255,255,0.2); color:#fff; border: 1px solid var(--glass-border); padding: 8px 15px;">Missing You 🥺</button>
+        <button onclick="selectMood('Excited 🎉')" style="background: rgba(255,255,255,0.2); color:#fff; border: 1px solid var(--glass-border); padding: 8px 15px;">Excited 🎉</button>
+    </div>
+    <p id="mood-response" style="margin-top: 15px; font-weight: bold; color: #fff;"></p>
+</div>
+
         <!-- Background Music Section -->
 <div class="music-section">
     <audio id="bg-music" loop>

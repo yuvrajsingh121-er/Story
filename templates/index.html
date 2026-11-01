@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Digital Scrapbook</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Lock Screen -->
+    <div id="lock-screen" class="glass-card">
+        <h2>🔒 Enter Special Date</h2>
+        <p>Hint: Our Birthday / Special Date (DDMM)</p> 
+        <input type="password" id="pin-input" placeholder="Enter PIN" maxlength="4">
+        <br>
+        <button onclick="unlockApp()">Unlock Memories 💕</button>
+        <p id="error-msg" style="color: #ffebee; margin-top: 10px; display: none;"></p>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="main-content" class="glass-card hidden">
+        <h1>Welcome Home ❤️</h1>
+        
+        <!-- Live Countdown -->
+        <div id="timer-section">
+            <h3>⏳ Countdown to Next Celebration:</h3>
+            <div id="countdown" style="font-size: 1.2rem; font-weight: bold;">Loading...</div>
+        </div>
+        <hr style="border-color: var(--glass-border); margin: 25px 0;">
+
+        <!-- Secret Note Generator -->
+        <div>
+            <h3>💌 Secret Note for You</h3>
+            <p id="secret-note-display">Click below to open a special message!</p>
+            <button onclick="fetchSecretNote()">Get Love Note 🎁</button>
+        </div>
+        <hr style="border-color: var(--glass-border); margin: 25px 0;">
+
+        <!-- Background Music Section -->
+<div class="music-section">
+    <audio id="bg-music" loop>
+        <source src="/love.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button id="music-btn" onclick="toggleMusic()" class="music-btn">🎵 Play Music</button>
+</div>
+
+        <!-- Memory Form Container -->
+<div class="glass-card">
+    <h3>📸 Add New Memory</h3>
+    <form id="memory-form" style="margin-top: 15px;">
+        <input type="text" id="memory-title" placeholder="Event Title (e.g., Beach Trip)" required style="width: 100%; margin-bottom: 10px; padding: 10px; border-radius: 8px; border: 1px solid var(--glass-border); background: rgba(0,0,0,0.2); color: #fff;">
+        
+        <textarea id="memory-desc" placeholder="Write a short memory..." required style="width: 100%; margin-bottom: 10px; padding: 10px; border-radius: 8px; border: 1px solid var(--glass-border); background: rgba(0,0,0,0.2); color: #fff;"></textarea>
+        
+        <input type="file" id="memory-image" accept="image/*" required style="margin-bottom: 15px; color: #fff;">
+        <br>
+        <button type="submit">Upload Memory ✨</button>
+    </form>
+</div>
+
+<!-- Timeline Container -->
+<div id="timeline-container">
+    <h3>📖 Our Journey</h3>
+    <div class="timeline-item">
+        <h4>1st Meeting</h4>
+        <p>The day everything changed for the better.</p>
+    </div>
+</div>
+
+        <!-- Interactive Journey Timeline -->
+        <div>
+            <h3>📖 Our Journey</h3>
+            <div class="timeline-item">
+                <h4>1st Meeting</h4>
+                <p>30 January 2024: Pehli Mulakat Ka Wo Pal<br>
+
+                    Wo Raaste Aur Wo Bheed: Ghar me chote bhai ke function ki raunaq thi, sab log aane-jaane me vyast the. Par us din ka sabse khaas moment tab aaya jab aapne kadam rakha. <br>
+                    
+                    Wo White Suit Ka Jaadu: Aapne white suit pehna hua tha—itna saadgi bhara look ki apko dekhte hi baaki sab dhundhla ho gaya.<br>
+                    
+                    Wo Takraana Aur Darr: Achanak aap mughse takra gayi! Us ek pal ke liye waqt ruk gaya. aapki aankhon me ek halka sa darr aur sharm aa gayi, jaise unhe samajh hi na aaya ho ki kya hua.<br>
+                    
+                    Dil Ki Dhadkan: Aapko itne paas se dekhkar aur wo innocent sa darr dekhkar mere andar bas 'dhak-dhak' hone laga. Mai tumhare is pyaare se roop ko dekh kar wahin pyaar me kho gaye.<br>
+                    
+                    Ek Na Bhoolne Wali Yaad: Maine khud kya pehna tha, aas-paas kaun tha... kuch yaad nahi raha. Yaad raha toh bas 30 January ka wo din, wo white suit, aapka takraana aur wo pehli mulakat..</p>
+            </div>
+            <div class="timeline-item">
+                <h4>First Date</h4>
+                <p>Without talking only to eyes conection (❁´◡`❁).</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

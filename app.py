@@ -7,11 +7,11 @@ import cloudinary.uploader
 
 app = Flask(__name__)
 
-# Cloudinary Setup (Apni Dashboard details se replace karein)
+# Cloudinary Setup (Environment variables se securely load hoga)
 cloudinary.config(
-    cloud_name="k2whstzb",
-    api_key="893793997386734",
-    api_secret="aW9oNsmr34OUcJbSXaDRX_LJIkc",
+    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME", "k2whstzb"),
+    api_key=os.environ.get("CLOUDINARY_API_KEY", "893793997386734"),
+    api_secret=os.environ.get("CLOUDINARY_API_SECRET", "aw9oNSmr340UcJbsXaDRX_LJIkc"),
     secure=True
 )
 
